@@ -20,7 +20,9 @@ class EmployeeWageComputation:
     def daily_wage():
         """
             Description:
-                computes daily wage for full day work
+                Computes daily wage for total hours worked.
+                Total hours depends on if employee is part-time or full-time.
+                Part-time/Full-time is decided using random module
             Return:
                 returns the daily wage
         """
