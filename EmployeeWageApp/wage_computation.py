@@ -24,7 +24,10 @@ class EmployeeWageComputation:
             Return:
                 returns the daily wage
         """
-        is_full_time = random.choice([True, False])
-        if is_full_time:
-            return 20*8
-        return 20*4
+        wage_per_hour = 20
+        total_hours_case = {
+            True: 8,
+            False: 4
+        }
+        total_hours = total_hours_case[random.choice([True, False])]
+        return total_hours*wage_per_hour
