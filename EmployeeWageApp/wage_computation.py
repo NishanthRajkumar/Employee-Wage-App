@@ -16,3 +16,14 @@ class EmployeeWageComputation:
                 true if present, false if absent
         """
         return random.choice([True, False])
+    
+    def daily_wage():
+        """
+            Description:
+                computes daily wage for full day work
+            Return:
+                returns the daily wage
+        """
+        wage_per_hour = 20
+        total_hours = 8
+        return wage_per_hour*total_hours
