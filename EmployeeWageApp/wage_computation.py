@@ -2,7 +2,7 @@
     @Author: Nishanth
     @Date: 24-03-2022 14:52:00
     @Last Modified by: Nishanth
-    @Last Modified time: 24-03-2022 19:54:00
+    @Last Modified time: 24-03-2022 20:02:00
     @Title: To compute employee wage as given in the use cases
 '''
 from cgitb import reset
@@ -74,8 +74,17 @@ class EmployeeWageComputation:
                 returns monthly wage that meets the condition
         """
         total_wage = 0
-        while (self.total_days_worked < 20 and self.total_hours_worked < 100):
+        while (self.total_days_worked < 20 and self.get_work_hours() < 100):
             self.reset()
             total_wage = self.monthly_wage()
         else:
             return total_wage
+    
+    def get_work_hours(self):
+        """
+            Description:
+                returns the total hours worked by the employee at the time of calling this method
+            Return:
+                returns total hours worked
+        """
+        return self.total_hours_worked
