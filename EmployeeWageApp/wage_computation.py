@@ -2,10 +2,9 @@
     @Author: Nishanth
     @Date: 24-03-2022 14:52:00
     @Last Modified by: Nishanth
-    @Last Modified time: 24-03-2022 20:13:00
+    @Last Modified time: 24-03-2022 20:20:00
     @Title: To compute employee wage as given in the use cases
 '''
-from cgitb import reset
 import random
 
 class EmployeeWageComputation:
@@ -59,11 +58,11 @@ class EmployeeWageComputation:
         """
         total_wage = 0
         daily_wage_list = []
-        for _ in range(0,20):
+        for i in range(0,20):
             if self.attendance():
                 daily_wage, hours_worked = self.daily_wage()
                 total_wage += daily_wage
-                daily_wage_list.append(daily_wage)
+                daily_wage_list.append((f"Day {i}", daily_wage))
                 self.total_days_worked += 1
                 self.total_hours_worked += hours_worked
         return (total_wage, daily_wage_list)
