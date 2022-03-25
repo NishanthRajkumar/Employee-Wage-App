@@ -71,15 +71,15 @@ class EmployeeWageComputation:
                 returns the monthly wage and the list of daily wages
         """
         total_wage = 0
-        daily_wage_list = []
+        daily_wage_dict = {}
         for i in range(0,20):
             if self.attendance():
                 daily_wage, hours_worked = self.daily_wage()
                 total_wage += daily_wage
-                daily_wage_list.append((f"Day {i}", daily_wage))
+                daily_wage_dict[f"Day {i}"] = daily_wage
                 self.total_days_worked += 1
                 self.total_hours_worked += hours_worked
-        return (total_wage, daily_wage_list)
+        return (total_wage, daily_wage_dict)
     
     def wage_condition(self):
         """
