@@ -5,7 +5,6 @@
     @Last Modified time: 24-03-2022 19:54:00
     @Title: To compute employee wage as given in the use cases
 '''
-from cgitb import reset
 import random
 
 class EmployeeWageComputation:
@@ -61,7 +60,7 @@ class EmployeeWageComputation:
                 raise Exception("Invalid hours per day recieved from switch-case")
         except Exception as e:
             print("Exception message: ", e)
-        return total_hours*wage_per_hour
+        return (total_hours*wage_per_hour, total_hours)
     
     def monthly_wage(self):
         """
