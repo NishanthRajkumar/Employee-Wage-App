@@ -54,7 +54,13 @@ class EmployeeWageComputation:
             }
             return switch_case.get(case, 0)
         wage_per_hour = 20
-        total_hours = hours_per_day(random.choice([1, 2]))
+        total_hours = 0
+        try:
+            total_hours = hours_per_day(random.choice([1, 2]))
+            if total_hours == 0:
+                raise Exception("Invalid hours per day recieved from switch-case")
+        except Exception as e:
+            print("Exception message: ", e)
         return (total_hours*wage_per_hour, total_hours)
     
     def monthly_wage(self):
