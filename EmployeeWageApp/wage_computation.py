@@ -41,13 +41,27 @@ class EmployeeWageComputation:
             Return:
                 returns the daily wage and hours worked that day
         """
+        def hours_per_day(case):
+            """
+                Description:
+                    Implements swtich case and retrieves the hours per day based on case argument
+                Return:
+                    returns hours per day
+            """
+            switch_case = {
+                1: 8,
+                2: 4
+            }
+            return switch_case.get(case, 0)
         wage_per_hour = 20
-        total_hours_case = {
-            True: 8,
-            False: 4
-        }
-        total_hours = total_hours_case[random.choice([True, False])]
-        return (total_hours*wage_per_hour, total_hours)
+        total_hours = 0
+        try:
+            total_hours = hours_per_day(random.choice([1, 2]))
+            if total_hours == 0:
+                raise Exception("Invalid hours per day recieved from switch-case")
+        except Exception as e:
+            print("Exception message: ", e)
+        return total_hours*wage_per_hour
     
     def monthly_wage(self):
         """
